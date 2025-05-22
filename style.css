@@ -230,3 +230,92 @@ body {
 .twitch { color: #9146FF; }
 .telegram { color: #229ED9; }
 .instagram { color: #E1306C; }
+
+/* Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+  /* Заставка */
+  .intro-logo {
+    width: 100px;
+  }
+  #animated-text {
+    font-size: 1.8rem;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  /* Верхняя панель */
+  .top-bar {
+    height: 70px;
+    padding: 0 10px;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logo-img {
+    height: 50px;
+    position: static;
+    transform: none;
+    margin: 5px 0;
+  }
+  .logo-link {
+    position: static;
+    transform: none;
+    order: -1;
+  }
+  .right-info {
+    font-size: 0.8rem;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 5px;
+  }
+
+  /* Меню */
+  .menu {
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    display: none; /* Скрываем по умолчанию */
+  }
+  .menu-button {
+    padding: 8px;
+    text-align: center;
+  }
+  .menu-dropdown .dropdown-list {
+    position: static;
+    background: transparent;
+  }
+
+  /* Гамбургер-меню */
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 101;
+  }
+  .menu.active {
+    display: flex;
+  }
+
+  /* Контент */
+  .hero-description {
+    margin-top: 120px;
+    padding: 15px;
+    max-width: 90%;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Соцсети */
+  .social-footer {
+    bottom: 10px;
+    gap: 10px;
+  }
+  .social-btn {
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+  }
+}
