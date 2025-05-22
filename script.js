@@ -20,3 +20,10 @@ window.addEventListener('load', () => {
     }, 1000);
   }, letters.length * 100 + 2000); // время анимации букв + небольшой запас
 });
+// После существующего кода
+const menuToggle = document.getElementById('menuToggle');
+const menu = document.querySelector('.menu');
+
+menuToggle.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
