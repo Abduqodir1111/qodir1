@@ -19,20 +19,7 @@
 <body>
 
   <!-- Заставка -->
-  <div id="intro-screen" class="intro-screen">
-    <img src="logo.jpg" alt="Логотип" class="intro-logo" />
-    <div id="animated-text" aria-label="Dark Zone">
-      <span class="letter" style="--i:1">D</span>
-      <span class="letter" style="--i:2">A</span>
-      <span class="letter" style="--i:3">R</span>
-      <span class="letter" style="--i:4">K</span>
-      <span class="letter" style="--i:5">&nbsp;</span>
-      <span class="letter" style="--i:6">Z</span>
-      <span class="letter" style="--i:7">O</span>
-      <span class="letter" style="--i:8">N</span>
-      <span class="letter" style="--i:9">E</span>
-    </div>
-  </div>
+
 
   <!-- Шапка -->
   <header class="top-bar" role="banner">
@@ -50,6 +37,10 @@
             <a href="#" role="menuitem" tabindex="-1">ЧИМГАН</a>
             <a href="#" role="menuitem" tabindex="-1">ОЙБЕК</a>
             <a href="#" role="menuitem" tabindex="-1">ЮНУСАБАД</a>
+            <a href="#" role="menuitem" tabindex="-1">КАДЕШЕВА</a>
+            <a href="#" role="menuitem" tabindex="-1">ПАРКЕНТСКИЙ</a>
+            <a href="#" role="menuitem" tabindex="-1">ЛАБЗАК</a>
+            <a href="#" role="menuitem" tabindex="-1">КАРАСУ</a>
           </div>
         </div>
         <a href="#prices" class="menu-button">Цены</a>
@@ -71,6 +62,36 @@
       <h1>Добро пожаловать в Dark Zone</h1>
       <p>Погрузись в мир киберспорта с мощными ПК, атмосферой и турнирами! Идеальное место для геймеров и стримеров.</p>
     </section>
+    <section id="services" class="reveal">
+  <h2>Наши услуги</h2>
+  <div class="services-grid">
+    <div class="service"><i class="fas fa-gamepad"></i><p>Современные ПК</p></div>
+    <div class="service"><i class="fas fa-trophy"></i><p>Киберспортивные турниры</p></div>
+    <div class="service"><i class="fas fa-headset"></i><p>Зоны для стриминга</p></div>
+  </div>
+</section>
+<section id="testimonials" class="reveal">
+  <h2>Отзывы наших гостей</h2>
+  <blockquote>🔥 «Отличное место, супер ПК и атмосфера!» – Артём</blockquote>
+  <blockquote>💻 «Играю здесь каждую неделю!» – Маша</blockquote>
+</section>
+<section id="contact-form" class="reveal">
+  <h2>Связаться с нами</h2>
+  <form>
+    <input type="text" placeholder="Ваше имя" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Ваше сообщение..." required></textarea>
+    <button type="submit">Отправить</button>
+  </form>
+</section>
+<section id="map-section" class="reveal">
+  <h2>Наши филиалы</h2>
+  <div id="map" style="height: 400px; border-radius: 10px; overflow: hidden;"></div>
+</section>
+
+
+
+
   </main>
 
   <!-- Футер -->
@@ -81,27 +102,9 @@
     <a href="#" class="social-btn instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
   </footer>
 
-  <script>
-    // Скрипт для работы мобильного меню и управления aria-expanded
-    const menuToggle = document.getElementById('menuToggle');
-    const menu = document.getElementById('menu');
-    menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-      menuToggle.setAttribute('aria-expanded', !expanded);
-      menu.classList.toggle('active');
-    });
 
-    // Скрыть заставку после 4 секунд с плавным исчезновением
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        const intro = document.getElementById('intro-screen');
-        intro.style.transition = 'opacity 1s ease';
-        intro.style.opacity = '0';
-        setTimeout(() => {
-          intro.style.display = 'none';
-        }, 1000);
-      }, 4000);
-    });
-  </script>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
