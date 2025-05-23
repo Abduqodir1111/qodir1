@@ -14,10 +14,11 @@ window.addEventListener('load', () => {
     setTimeout(() => {
       introScreen.style.display = 'none';
       mainContent.classList.add('show');
-    }, 1000);
-  }, letters.length * 100 + 2000);
+    }, 500); // можно чуть ускорить скрытие
+  }, 1000); // ускорили до 1 секунды
 });
 
+// Открытие и закрытие меню
 const menuToggle = document.getElementById('menuToggle');
 const menu = document.getElementById('menu');
 
@@ -30,11 +31,13 @@ document.querySelectorAll('.menu a, .dropdown-list a').forEach(link => {
     menu.classList.remove('active');
   });
 });
+
 // Параллакс-эффект фона при прокрутке
 window.addEventListener('scroll', () => {
   const scrollPosition = window.pageYOffset;
   document.body.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
 });
+
 // Анимация при прокрутке
 function revealOnScroll() {
   const reveals = document.querySelectorAll('.reveal');
@@ -51,3 +54,12 @@ function revealOnScroll() {
 }
 
 window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', () => {
+  revealOnScroll();
+});
+
+const menuToggle = document.getElementById('menuToggle');
+const menu = document.getElementById('menu');
+menuToggle.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
