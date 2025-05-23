@@ -60,10 +60,11 @@ main.main-content {
   margin-top: 20px;
 }
 
+/* Изменённые параметры анимации для ускорения */
 .letter {
   opacity: 0;
-  animation: slide-bck-top 0.5s forwards ease;
-  animation-delay: calc(0.1s * var(--i));
+  animation: slide-bck-top 0.25s forwards ease; /* было 0.5s */
+  animation-delay: calc(0.05s * var(--i));      /* было 0.1s */
 }
 
 @keyframes slide-bck-top {
