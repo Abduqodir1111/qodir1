@@ -294,3 +294,90 @@ main.main-content {
     text-align: center;
   }
 }
+#services {
+  margin: 60px auto;
+  text-align: center;
+}
+
+#services h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.service {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ffd700;
+}
+
+.service:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #fff;
+}
+#testimonials {
+  margin: 60px auto;
+  text-align: center;
+  max-width: 700px;
+}
+
+#testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+#testimonials blockquote {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-left: 4px solid #ffd700;
+  margin: 20px auto;
+  font-style: italic;
+  border-radius: 10px;
+}
+#contact-form {
+  margin: 60px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 1rem;
+}
+
+#contact-form button {
+  background: #ffd700;
+  border: none;
+  color: black;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#contact-form button:hover {
+  background: #e6c200;
+}
+
