@@ -619,3 +619,68 @@ h2:hover {
     pointer-events: none;
   }
 }
+/* === Пульсирующий логотип === */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px #ff00cc, 0 0 20px #ff00cc;
+  }
+  50% {
+    transform: scale(1.07);
+    box-shadow: 0 0 25px #ff00cc, 0 0 40px #ff00cc;
+  }
+}
+
+.logo-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px solid white;
+  object-fit: cover;
+  animation: pulse 2.5s ease-in-out infinite; /* 👈 добавляем пульс */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 30px #ff00cc, 0 0 50px #ff00cc;
+}
+/* === Центр логотипа + номер в мобильной версии === */
+.mobile-header-center {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.mobile-header-center .logo-img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.phone-link {
+  color: #ffd700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border: 2px solid #ffd700;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.phone-link:hover {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+/* Только на мобильных */
+@media (max-width: 768px) {
+  .top-bar .logo-link,
+  .right-info {
+    display: none;
+  }
+
+  .mobile-header-center {
+    display: flex;
+  }
+}
