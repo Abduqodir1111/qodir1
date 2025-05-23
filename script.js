@@ -95,20 +95,18 @@ function initMapWhenVisible() {
                   balloonContent: branch.name
                 }, {
                   iconLayout: 'default#image',
-                  iconImageHref: 'logo.jpg',
+                  iconImageHref: 'logo1.png',
                   iconImageSize: [40, 40],
                   iconImageOffset: [-20, -20]
                 })
               );
             });
 
-            // После инициализации устанавливаем центр ещё раз
             setTimeout(() => {
               map.setCenter(centerCoords, 11, { checkZoomRange: true });
               map.container.fitToViewport();
             }, 100);
 
-            // Фиксируем центр при каждом изменении зума
             map.events.add('boundschange', function (e) {
               if (e.get('newZoom') !== e.get('oldZoom')) {
                 map.setCenter(centerCoords);
@@ -126,3 +124,40 @@ function initMapWhenVisible() {
 }
 
 window.addEventListener('DOMContentLoaded', initMapWhenVisible);
+
+// === Переключение темы ===
+const themeToggle = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('theme');
+
+if (savedTheme === 'light') {
+  document.body.classList.add('light');
+  themeToggle.textContent = '☀️';
+}
+
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('light');
+  const isLight = document.body.classList.contains('light');
+
+  themeToggle.textContent = isLight ? '☀️' : '🌙';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+
+  themeToggle.classList.add('animate-spin');
+
+  setTimeout(() => {
+    themeToggle.classList.remove('animate-spin');
+  }, 600);
+});
+
+// Задержка показа основного контента после заставки
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const intro = document.getElementById('intro-screen');
+intro.classList.add('fade-out');
+
+setTimeout(() => {
+  intro.style.display = 'none';
+  document.getElementById('main-content').classList.add('show');
+}, 1000); // 1 секунда на анимацию
+
+  }, 4000); // Пауза 2 сек + анимация 1 сек + запас
+});
