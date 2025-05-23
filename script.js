@@ -30,3 +30,24 @@ document.querySelectorAll('.menu a, .dropdown-list a').forEach(link => {
     menu.classList.remove('active');
   });
 });
+// Параллакс-эффект фона при прокрутке
+window.addEventListener('scroll', () => {
+  const scrollPosition = window.pageYOffset;
+  document.body.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+});
+// Анимация при прокрутке
+function revealOnScroll() {
+  const reveals = document.querySelectorAll('.reveal');
+
+  for (let i = 0; i < reveals.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = reveals[i].getBoundingClientRect().top;
+    const elementVisible = 100;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add('active');
+    }
+  }
+}
+
+window.addEventListener('scroll', revealOnScroll);
