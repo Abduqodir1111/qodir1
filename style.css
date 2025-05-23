@@ -1,7 +1,26 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1; /* Заставляет основной контент занимать всё доступное пространство */
+}
+
+.social-footer {
+  background: rgba(0, 0, 0, 0.7); /* можно по желанию */
+  padding: 10px 0;               /* отступы сверху и снизу */
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: url('1.jpg') no-repeat center center fixed;
+  background: url('1.jpg') no-repeat center center;
+  background-size: cover;
+/* background-attachment: fixed; — убираем */
+
   background-size: cover;
   color: white;
   overflow-x: hidden;
@@ -88,11 +107,12 @@ body {
   text-decoration: none;
   padding: 8px 12px;
   border-radius: 6px;
-  transition: background 0.3s;
+  transition: background 0.3s ease, color 0.3s ease; /* Добавляем плавный переход */
 }
 
 .menu-button:hover {
   background: rgba(255,255,255,0.2);
+  color: #ffd700; /* Можно добавить цвет при наведении */
 }
 
 .menu-dropdown {
@@ -181,12 +201,14 @@ body {
   text-align: center;
   line-height: 48px;
   border: 2px solid white;
-  transition: 0.3s;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .social-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   background: rgba(255,255,255,0.3);
+  box-shadow: 0 0 10px white;
+  color: #ffd700; /* цвет иконки при наведении */
 }
 
 .youtube { color: #FF0000; }
@@ -239,3 +261,23 @@ body {
     margin-top: 5px;
   }
 }
+.menu-toggle {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+/* Анимация появления */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
