@@ -1,39 +1,37 @@
+/* === Общие стили === */
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   height: 100%;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.main-content {
-  flex: 1; /* Заставляет основной контент занимать всё доступное пространство */
-}
-
-.social-footer {
-  background: rgba(0, 0, 0, 0.7); /* можно по желанию */
-  padding: 10px 0;               /* отступы сверху и снизу */
-}
-
-body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  background: url('1.jpg') no-repeat center center;
-  background-size: cover;
-/* background-attachment: fixed; — убираем */
-
+  background: url('1.jpg') no-repeat center center fixed;
   background-size: cover;
   color: white;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Заставка */
+/* Основной контент занимает всё пространство между шапкой и футером */
+main.main-content {
+  flex: 1 0 auto;
+  padding: 130px 20px 60px; /* Отступ сверху для шапки + снизу для футера */
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+}
+
+/* === Заставка === */
 .intro-screen {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: black;
+  inset: 0;
+  background-color: #000;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,21 +71,12 @@ body {
   100% { transform: translateY(0); opacity: 1; }
 }
 
-.main-content {
-  display: none;
-  opacity: 0;
-  transition: opacity 1s ease;
-}
-
-.main-content.show {
-  display: block;
-  opacity: 1;
-}
-
+/* === Шапка (top-bar) === */
 .top-bar {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
   height: 90px;
   background: rgba(0, 0, 0, 0.85);
   display: flex;
@@ -95,61 +84,94 @@ body {
   justify-content: space-between;
   padding: 0 20px;
   z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
+/* Левая часть: гамбургер + меню */
+.left-menu-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Кнопка гамбургер (меню для мобильных) */
+/* Скрываем по умолчанию */
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+/* Меню */
 .menu {
   display: flex;
   gap: 15px;
+  align-items: center;
 }
 
 .menu-button {
   color: white;
   text-decoration: none;
-  padding: 8px 12px;
+  padding: 8px 14px;
   border-radius: 6px;
-  transition: background 0.3s ease, color 0.3s ease; /* Добавляем плавный переход */
+  transition: background 0.3s ease, color 0.3s ease;
+  user-select: none;
 }
 
 .menu-button:hover {
-  background: rgba(255,255,255,0.2);
-  color: #ffd700; /* Можно добавить цвет при наведении */
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffd700;
 }
 
+/* Выпадающее меню */
 .menu-dropdown {
   position: relative;
+  cursor: pointer;
 }
 
 .dropdown-list {
   display: none;
   position: absolute;
-  top: 100%;
+  top: 110%;
   left: 0;
   background: rgba(0,0,0,0.9);
-  padding: 10px;
   border-radius: 6px;
-  z-index: 10;
+  padding: 10px 0;
+  min-width: 140px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.7);
+  z-index: 200;
 }
 
 .menu-dropdown:hover .dropdown-list {
   display: block;
 }
 
-.dropdown-item {
-  color: white;
-  padding: 6px 10px;
+.dropdown-list a {
   display: block;
+  padding: 8px 16px;
+  color: white;
   text-decoration: none;
+  transition: background 0.3s ease;
 }
 
-.dropdown-item:hover {
+.dropdown-list a:hover {
   background: rgba(255,255,255,0.1);
 }
 
+/* Центрируем лого */
 .logo-link {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 150;
 }
 
 .logo-img {
@@ -158,7 +180,7 @@ body {
   border-radius: 50%;
   border: 3px solid white;
   object-fit: cover;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo-img:hover {
@@ -166,29 +188,26 @@ body {
   box-shadow: 0 0 12px white;
 }
 
+/* Правая часть - номер телефона */
 .right-info {
   font-size: 1rem;
   white-space: nowrap;
   color: white;
+  user-select: none;
+  max-width: 220px;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Контент */
-.hero-description {
-  margin-top: 120px;
-  padding: 30px;
-  text-align: center;
-  background: rgba(0,0,0,0.6);
-  max-width: 700px;
-  margin: 120px auto 40px;
-  border-radius: 12px;
-}
-
-/* Соцсети */
+/* === Футер === */
 .social-footer {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 12px 0;
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 40px;
+  flex-shrink: 0;
 }
 
 .social-btn {
@@ -197,87 +216,80 @@ body {
   border-radius: 50%;
   background: rgba(255,255,255,0.1);
   color: white;
-  font-size: 20px;
+  font-size: 22px;
   text-align: center;
   line-height: 48px;
   border: 2px solid white;
   transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  user-select: none;
 }
 
 .social-btn:hover {
-  transform: scale(1.2);
   background: rgba(255,255,255,0.3);
-  box-shadow: 0 0 10px white;
-  color: #ffd700; /* цвет иконки при наведении */
+  color: #ffd700;
+  transform: scale(1.2);
+  box-shadow: 0 0 12px white;
 }
 
+/* Цвета соцсетей */
 .youtube { color: #FF0000; }
 .twitch { color: #9146FF; }
 .telegram { color: #229ED9; }
 .instagram { color: #E1306C; }
 
-/* Мобильная версия */
+/* === Адаптив === */
 @media (max-width: 768px) {
   .top-bar {
-    flex-direction: column;
     height: auto;
-    padding: 10px;
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    justify-content: space-between;
   }
 
+  .left-menu-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Логотип становится статичным */
+  .logo-link {
+    position: static;
+    transform: none;
+    margin: 10px auto 0;
+  }
+
+  /* Меню скрыто по умолчанию */
   .menu {
     flex-direction: column;
-    display: none;
     width: 100%;
+    display: none; /* Скрываем */
     background: rgba(0,0,0,0.95);
     padding: 10px 0;
-    position: absolute;
-    top: 90px;
-    left: 0;
+    border-radius: 6px;
+    margin-top: 10px;
   }
 
+  /* Показываем меню при добавлении класса .active */
   .menu.active {
     display: flex;
   }
 
+  .menu-button {
+    padding: 12px 20px;
+  }
+
+  /* Гамбургер видно только на мобильных */
   .menu-toggle {
     display: block;
-    font-size: 1.5rem;
-    cursor: pointer;
   }
 
-  .logo-link {
-    position: static;
-    transform: none;
-  }
-
-  .logo-img {
-    width: 60px;
-    height: 60px;
-  }
-
+  /* Правая часть (номер) под меню */
   .right-info {
+    position: static;
+    max-width: 100%;
+    white-space: normal;
+    margin-top: 12px;
     text-align: center;
-    font-size: 0.9rem;
-    margin-top: 5px;
   }
 }
-.menu-toggle {
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.menu-toggle:hover {
-  color: #ffd700;
-  transform: scale(1.2);
-}
-/* Анимация появления */
-.reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
