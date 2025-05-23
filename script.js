@@ -59,34 +59,70 @@ function revealOnScroll() {
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
-// Карта с филиалами (Yandex Maps)
-ymaps.ready(function () {
-  const map = new ymaps.Map("map", {
-    center: [41.2995, 69.2401], // центр карты — Ташкент
-    zoom: 11,
+// Карта с автоинициализацией после появления блока
+function initMapWhenVisible() {
+  const mapSection = document.getElementById('map-section');
+  const mapContainer = document.getElementById('map');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (!mapContainer.dataset.mapLoaded) {
+          ymaps.ready(function () {
+            const centerCoords = [41.2995, 69.2401]; // Центр: Ташкент
+
+            const map = new ymaps.Map("map", {
+              center: centerCoords,
+              zoom: 11,
+              controls: ['zoomControl', 'fullscreenControl'],
+              behaviors: ['default', 'scrollZoom']
+            });
+
+            const branches = [
+              { coords: [41.283867, 69.189104], name: "Чилонзор" },
+              { coords: [41.346246, 69.346451], name: "Чимган" },
+              { coords: [41.293425, 69.272551], name: "Ойбек" },
+              { coords: [41.369865, 69.310554], name: "Юнусабод" },
+              { coords: [41.281909, 69.351810], name: "Кадешева" },
+              { coords: [41.314483, 69.327489], name: "Паркентский" },
+              { coords: [41.335671, 69.265713], name: "Лабзак" },
+              { coords: [41.318557, 69.357142], name: "Карасу" },
+            ];
+
+            branches.forEach(branch => {
+              map.geoObjects.add(
+                new ymaps.Placemark(branch.coords, {
+                  balloonContent: branch.name
+                }, {
+                  iconLayout: 'default#image',
+                  iconImageHref: 'logo.jpg',
+                  iconImageSize: [40, 40],
+                  iconImageOffset: [-20, -20]
+                })
+              );
+            });
+
+            // После инициализации устанавливаем центр ещё раз
+            setTimeout(() => {
+              map.setCenter(centerCoords, 11, { checkZoomRange: true });
+              map.container.fitToViewport();
+            }, 100);
+
+            // Фиксируем центр при каждом изменении зума
+            map.events.add('boundschange', function (e) {
+              if (e.get('newZoom') !== e.get('oldZoom')) {
+                map.setCenter(centerCoords);
+              }
+            });
+
+            mapContainer.dataset.mapLoaded = "true";
+          });
+        }
+      }
+    });
   });
 
-  const branches = [
-    { coords: [41.283867, 69.189104], name: "Чилонзор" },
-    { coords: [41.346246, 69.346451], name: "Чимган" },
-    { coords: [41.293425, 69.272551], name: "Ойбек" },
-    { coords: [41.369865, 69.310554], name: "Юнусабод" },
-    { coords: [41.281909, 69.351810], name: "Кадешева" },
-    { coords: [41.314483, 69.327489], name: "Паркентский" },
-    { coords: [41.335671, 69.265713], name: "Лабзак" },
-    { coords: [41.318557, 69.357142], name: "Карасу" },
-  ];
+  observer.observe(mapSection);
+}
 
-  branches.forEach(branch => {
-    map.geoObjects.add(
-      new ymaps.Placemark(branch.coords, {
-        balloonContent: branch.name
-      }, {
-        iconLayout: 'default#image',
-        iconImageHref: 'logo.jpg',
-        iconImageSize: [40, 40],
-        iconImageOffset: [-20, -20]
-      })
-    );
-  });
-}); // ✅ Закрываем ymaps.ready()
+window.addEventListener('DOMContentLoaded', initMapWhenVisible);
