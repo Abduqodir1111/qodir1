@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dark Zone</title>
-  <link rel="icon" href="logo.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="logo.jpg" type="image/jpeg" />
+  <link
+    rel="stylesheet"
+    href="style.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <body>
 
   <!-- Заставка -->
   <div id="intro-screen" class="intro-screen">
-    <img src="logo.jpg" alt="Логотип" class="intro-logo">
-    <div id="animated-text">
+    <img src="logo.jpg" alt="Логотип" class="intro-logo" />
+    <div id="animated-text" aria-label="Dark Zone">
       <span class="letter" style="--i:1">D</span>
       <span class="letter" style="--i:2">A</span>
       <span class="letter" style="--i:3">R</span>
@@ -27,48 +35,73 @@
   </div>
 
   <!-- Шапка -->
-  <header class="top-bar">
-    <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+  <header class="top-bar" role="banner">
+    <div class="left-menu-group">
+      <button id="menuToggle" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
 
-    <nav class="menu" id="menu">
-      <a href="#about" class="menu-button">О нас</a>
-      <div class="menu-dropdown">
-        <div class="menu-button">Филиалы ▾</div>
-        <div class="dropdown-list">
-          <a href="#">ЧИЛОНЗОР</a>
-          <a href="#">ЧИМГАН</a>
-          <a href="#">ОЙБЕК</a>
-          <a href="#">ЮНУСАБАД</a>
+      <nav id="menu" class="menu" role="navigation" aria-label="Главное меню">
+        <a href="#about" class="menu-button">О нас</a>
+        <div class="menu-dropdown" tabindex="0">
+          <div class="menu-button" aria-haspopup="true" aria-expanded="false">Филиалы ▾</div>
+          <div class="dropdown-list" role="menu" aria-label="Филиалы">
+            <a href="#" role="menuitem" tabindex="-1">ЧИЛОНЗОР</a>
+            <a href="#" role="menuitem" tabindex="-1">ЧИМГАН</a>
+            <a href="#" role="menuitem" tabindex="-1">ОЙБЕК</a>
+            <a href="#" role="menuitem" tabindex="-1">ЮНУСАБАД</a>
+          </div>
         </div>
-      </div>
-      <a href="#prices" class="menu-button">Цены</a>
-      <a href="#promotions" class="menu-button">Акции</a>
-      <a href="#contacts" class="menu-button">Контакты</a>
-    </nav>
+        <a href="#prices" class="menu-button">Цены</a>
+        <a href="#promotions" class="menu-button">Акции</a>
+        <a href="#contacts" class="menu-button">Контакты</a>
+      </nav>
+    </div>
 
-    <a href="index.html" class="logo-link">
-      <img src="logo.jpg" alt="Логотип клуба" class="logo-img">
+    <a href="index.html" class="logo-link" aria-label="Главная страница">
+      <img src="logo.jpg" alt="Логотип клуба" class="logo-img" />
     </a>
 
-    <div class="right-info">Кол-центр: +998 33 125 33 33</div>
+    <div class="right-info" aria-label="Номер колл-центра">Кол-центр: +998 33 125 33 33</div>
   </header>
 
   <!-- Контент -->
-  <main class="main-content" id="main-content">
+  <main class="main-content" id="main-content" role="main">
     <section class="hero-description reveal">
       <h1>Добро пожаловать в Dark Zone</h1>
       <p>Погрузись в мир киберспорта с мощными ПК, атмосферой и турнирами! Идеальное место для геймеров и стримеров.</p>
     </section>
-    </main>
+  </main>
 
-    <footer class="social-footer">
-      <a href="#" class="social-btn youtube"><i class="fab fa-youtube"></i></a>
-      <a href="#" class="social-btn twitch"><i class="fab fa-twitch"></i></a>
-      <a href="#" class="social-btn telegram"><i class="fab fa-telegram"></i></a>
-      <a href="#" class="social-btn instagram"><i class="fab fa-instagram"></i></a>
-    </footer>
-  
+  <!-- Футер -->
+  <footer class="social-footer" role="contentinfo">
+    <a href="#" class="social-btn youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="#" class="social-btn twitch" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+    <a href="#" class="social-btn telegram" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+    <a href="#" class="social-btn instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Скрипт для работы мобильного меню и управления aria-expanded
+    const menuToggle = document.getElementById('menuToggle');
+    const menu = document.getElementById('menu');
+    menuToggle.addEventListener('click', () => {
+      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+      menuToggle.setAttribute('aria-expanded', !expanded);
+      menu.classList.toggle('active');
+    });
+
+    // Скрыть заставку после 4 секунд с плавным исчезновением
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const intro = document.getElementById('intro-screen');
+        intro.style.transition = 'opacity 1s ease';
+        intro.style.opacity = '0';
+        setTimeout(() => {
+          intro.style.display = 'none';
+        }, 1000);
+      }, 4000);
+    });
+  </script>
 </body>
 </html>
