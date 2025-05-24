@@ -161,3 +161,34 @@ setTimeout(() => {
 
   }, 4000); // Пауза 2 сек + анимация 1 сек + запас
 });
+
+  function openModal() {
+    document.getElementById("modal").style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("modal");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+  // При нажатии на кнопку, переключаем статус бронирования
+document.querySelectorAll('.seat').forEach(button => {
+  button.addEventListener('click', () => {
+    if (!button.classList.contains('booked')) {
+      button.classList.add('booked');
+      button.textContent += ' (Забронировано)';
+    } else {
+      button.classList.remove('booked');
+      button.textContent = button.textContent.replace(' (Забронировано)', '');
+    }
+  });
+});
+window.addEventListener('load', () => {
+  initMapWhenVisible();
+});
+
