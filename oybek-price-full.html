@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Цены — Ойбек | DARK ZONE</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: url('1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+    .main-content {
+      padding: 120px 20px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.6rem;
+      text-align: center;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px #ff00cc;
+    }
+
+    .price-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .zone-card {
+      flex: 1 1 220px;
+      background: rgba(0, 0, 0, 0.75);
+      padding: 30px 20px;
+      border-radius: 12px;
+      text-align: center;
+      border: 2px solid #ffd700;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .zone-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px #ffd700;
+    }
+
+    .zone-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #ffd700;
+    }
+
+    .zone-price {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #00fff7;
+    }
+
+    .zone-packs {
+      font-size: 1.1rem;
+      color: #eee;
+      margin-top: 10px;
+    }
+
+    .zone-packs li {
+      margin: 6px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar" role="banner">
+    <div class="left-menu-group">
+      <button id="menuToggle" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav id="menu" class="menu" role="navigation" aria-label="Главное меню">
+        <a href="#about" class="menu-button">О нас</a>
+        <div class="menu-dropdown" tabindex="0">
+          <div class="menu-button" aria-haspopup="true" aria-expanded="false">Филиалы ▾</div>
+          <div class="dropdown-list" role="menu" aria-label="Филиалы">
+            <a href="#" role="menuitem" tabindex="-1">ЧИЛОНЗОР</a>
+            <a href="#" role="menuitem" tabindex="-1">ЧИМГАН</a>
+            <a href="#" role="menuitem" tabindex="-1">ОЙБЕК</a>
+            <a href="#" role="menuitem" tabindex="-1">ЮНУСАБАД</a>
+            <a href="#" role="menuitem" tabindex="-1">КАДЕШЕВА</a>
+            <a href="#" role="menuitem" tabindex="-1">ПАРКЕНТСКИЙ</a>
+            <a href="#" role="menuitem" tabindex="-1">ЛАБЗАК</a>
+            <a href="#" role="menuitem" tabindex="-1">КАРАСУ</a>
+          </div>
+        </div>
+        <a href="#prices" class="menu-button">Цены</a>
+        <a href="#promotions" class="menu-button">Акции</a>
+        <a href="#contacts" class="menu-button">Контакты</a>
+      </nav>
+    </div>
+
+    <a href="index.html" class="logo-link" aria-label="Главная страница">
+      <img src="logo.jpg" alt="Логотип клуба" class="logo-img" />
+    </a>
+
+    <div class="right-info" aria-label="Номер колл-центра">Кол-центр: +998 33 125 33 33</div>
+    <button id="themeToggle" aria-label="Переключить тему" class="theme-toggle-btn">🌙</button>
+
+  </header>
+
+  <main class="main-content">
+    <h1 class="section-title">Цены — филиал Ойбек</h1>
+    <div class="price-row">
+      <div class="zone-card">
+        <div class="zone-title">Общий зал</div>
+        <div class="zone-price">20 000 сум / час</div>
+        <ul class="zone-packs">
+          <li>3 часа — 50 000 сум</li>
+          <li>5 часов — 75 000 сум</li>
+        </ul>
+      </div>
+
+      <div class="zone-card">
+        <div class="zone-title">ASUS</div>
+        <div class="zone-price">25 000 сум / час</div>
+        <ul class="zone-packs">
+          <li>3 часа — 60 000 сум</li>
+          <li>5 часов — 90 000 сум</li>
+        </ul>
+      </div>
+
+      <div class="zone-card">
+        <div class="zone-title">Alienware</div>
+        <div class="zone-price">25 000 сум / час</div>
+        <ul class="zone-packs">
+          <li>3 часа — 60 000 сум</li>
+          <li>5 часов — 90 000 сум</li>
+        </ul>
+      </div>
+
+      <div class="zone-card">
+        <div class="zone-title">Zowie</div>
+        <div class="zone-price">25 000 сум / час</div>
+        <ul class="zone-packs">
+          <li>3 часа — 60 000 сум</li>
+          <li>5 часов — 90 000 сум</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+<footer class="social-footer" role="contentinfo">
+    <a href="#" class="social-btn youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="#" class="social-btn twitch" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+    <a href="#" class="social-btn telegram" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+    <a href="https://www.instagram.com/darkzone.esport?igsh=dG5naXMxMnFtZWd0" class="social-btn instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  </footer>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+<script src="script.js"></script>
+</body>
+</html>

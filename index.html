@@ -5,20 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dark Zone</title>
   <link rel="icon" href="logo.jpg" type="image/jpeg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link
-    rel="stylesheet"
-    href="style.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
 </head>
 <body>
 
-  <!-- ВИДЕО-ИНТРО ЗАСТАВКА -->
+<!-- ЗАСТАВКА -->
 <div id="intro-screen">
   <div class="matrix-bg"></div>
   <div class="intro-content">
@@ -27,101 +26,89 @@
   </div>
 </div>
 
+<!-- ШАПКА -->
+<header class="top-bar" role="banner">
+  <div class="left-menu-group">
+    <button id="menuToggle" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
 
-
-  <!-- Шапка -->
-  <header class="top-bar" role="banner">
-    <div class="left-menu-group">
-      <button id="menuToggle" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <nav id="menu" class="menu" role="navigation" aria-label="Главное меню">
-        <a href="#about" class="menu-button">О нас</a>
-        <div class="menu-dropdown" tabindex="0">
-          <div class="menu-button" aria-haspopup="true" aria-expanded="false">Филиалы ▾</div>
-          <div class="dropdown-list" role="menu" aria-label="Филиалы">
-            <a href="#" role="menuitem" tabindex="-1">ЧИЛОНЗОР</a>
-            <a href="#" role="menuitem" tabindex="-1">ЧИМГАН</a>
-            <a href="#" role="menuitem" tabindex="-1">ОЙБЕК</a>
-            <a href="#" role="menuitem" tabindex="-1">ЮНУСАБАД</a>
-            <a href="#" role="menuitem" tabindex="-1">КАДЕШЕВА</a>
-            <a href="#" role="menuitem" tabindex="-1">ПАРКЕНТСКИЙ</a>
-            <a href="#" role="menuitem" tabindex="-1">ЛАБЗАК</a>
-            <a href="#" role="menuitem" tabindex="-1">КАРАСУ</a>
-          </div>
+    <nav id="menu" class="menu" role="navigation" aria-label="Главное меню">
+      <a href="#about" class="menu-button">О нас</a>
+      <div class="menu-dropdown" tabindex="0">
+        <div class="menu-button" aria-haspopup="true" aria-expanded="false">Филиалы ▾</div>
+        <div class="dropdown-list" role="menu" aria-label="Филиалы">
+          <a href="oybek-price-full.html" role="menuitem" tabindex="-1">ОЙБЕК</a>
+          <a href="#" role="menuitem" tabindex="-1">ЧИЛОНЗОР</a>
+          <a href="#" role="menuitem" tabindex="-1">ЧИМГАН</a>
+          <a href="#" role="menuitem" tabindex="-1">ЮНУСАБАД</a>
+          <a href="#" role="menuitem" tabindex="-1">КАДЕШЕВА</a>
+          <a href="#" role="menuitem" tabindex="-1">ПАРКЕНТСКИЙ</a>
+          <a href="#" role="menuitem" tabindex="-1">ЛАБЗАК</a>
+          <a href="#" role="menuitem" tabindex="-1">КАРАСУ</a>
         </div>
-        <a href="#prices" class="menu-button">Цены</a>
-        <a href="#promotions" class="menu-button">Акции</a>
-        <a href="#contacts" class="menu-button">Контакты</a>
-      </nav>
-    </div>
-
-    <a href="index.html" class="logo-link" aria-label="Главная страница">
-      <img src="logo.jpg" alt="Логотип клуба" class="logo-img" />
-    </a>
-
-    <div class="right-info" aria-label="Номер колл-центра">Кол-центр: +998 33 125 33 33</div>
-    <button id="themeToggle" aria-label="Переключить тему" class="theme-toggle-btn">🌙</button>
-
-  
-  <div class="mobile-header-center">
-    <a href="index.html" class="logo-link" aria-label="Главная страница">
-      <img src="logo.jpg" alt="Логотип клуба" class="logo-img" />
-    </a>
-    <a href="tel:+998331253333" class="phone-link">+998 33 125 33 33</a>
+      </div>
+      <a href="#prices" class="menu-button">Цены</a>
+      <a href="#promotions" class="menu-button">Акции</a>
+      <a href="#contacts" class="menu-button">Контакты</a>
+    </nav>
   </div>
+
+  <a href="index.html" class="logo-link" aria-label="Главная страница">
+    <img src="logo.jpg" alt="Логотип клуба" class="logo-img" />
+  </a>
+
+  <div class="right-info" aria-label="Номер колл-центра">Кол-центр: +998 33 125 33 33</div>
+  <button id="themeToggle" aria-label="Переключить тему" class="theme-toggle-btn">🌙</button>
 </header>
 
+<!-- ОСНОВНОЙ КОНТЕНТ -->
+<main class="main-content" id="main-content" role="main">
+  <section class="hero-description reveal">
+    <h1>Добро пожаловать в Dark Zone</h1>
+    <p>Погрузись в мир киберспорта с мощными ПК, атмосферой и турнирами! Идеальное место для геймеров и стримеров.</p>
+  </section>
 
-  <!-- Контент -->
-  <main class="main-content" id="main-content" role="main">
-    <section class="hero-description reveal">
-      <h1>Добро пожаловать в Dark Zone</h1>
-      <p>Погрузись в мир киберспорта с мощными ПК, атмосферой и турнирами! Идеальное место для геймеров и стримеров.</p>
-    </section>
-    <section id="services" class="reveal">
-  <h2>Наши услуги</h2>
-  <div class="services-grid">
-    <div class="service"><i class="fas fa-gamepad"></i><p>Современные ПК</p></div>
-    <div class="service"><i class="fas fa-trophy"></i><p>Киберспортивные турниры</p></div>
-    <div class="service"><i class="fas fa-headset"></i><p>Зоны для стриминга</p></div>
-  </div>
-</section>
-<section id="testimonials" class="reveal">
-  <h2>Отзывы наших гостей</h2>
-  <blockquote>🔥 «Отличное место, супер ПК и атмосфера!» – Артём</blockquote>
-  <blockquote>💻 «Играю здесь каждую неделю!» – Маша</blockquote>
-</section>
-<section id="contact-form" class="reveal">
-  <h2>Связаться с нами</h2>
-  <form>
-    <input type="text" placeholder="Ваше имя" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Ваше сообщение..." required></textarea>
-    <button type="submit">Отправить</button>
-  </form>
-</section>
-<section id="map-section" class="reveal">
-  <h2>Наши филиалы</h2>
-  <div id="map" style="height: 400px; border-radius: 10px; overflow: hidden;"></div>
-</section>
+  <section id="services" class="reveal">
+    <h2>Наши услуги</h2>
+    <div class="services-grid">
+      <div class="service"><i class="fas fa-gamepad"></i><p>Современные ПК</p></div>
+      <div class="service"><i class="fas fa-trophy"></i><p>Киберспортивные турниры</p></div>
+      <div class="service"><i class="fas fa-headset"></i><p>Зоны для стриминга</p></div>
+    </div>
+  </section>
 
+  <section id="testimonials" class="reveal">
+    <h2>Отзывы наших гостей</h2>
+    <blockquote>🔥 «Отличное место, супер ПК и атмосфера!» – Артём</blockquote>
+    <blockquote>💻 «Играю здесь каждую неделю!» – Маша</blockquote>
+  </section>
 
+  <section id="contact-form" class="reveal">
+    <h2>Связаться с нами</h2>
+    <form>
+      <input type="text" placeholder="Ваше имя" required>
+      <input type="email" placeholder="Email" required>
+      <textarea placeholder="Ваше сообщение..." required></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+  </section>
 
+  <section id="map-section" class="reveal">
+    <h2>Наши филиалы</h2>
+    <div id="map" style="height: 400px; border-radius: 10px; overflow: hidden;"></div>
+  </section>
+</main>
 
-  </main>
+<!-- ФУТЕР -->
+<footer class="social-footer" role="contentinfo">
+  <a href="#" class="social-btn youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+  <a href="#" class="social-btn twitch" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+  <a href="#" class="social-btn telegram" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+  <a href="https://www.instagram.com/darkzone.esport?igsh=dG5naXMxMnFtZWd0" class="social-btn instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+</footer>
 
-  <!-- Футер -->
-  <footer class="social-footer" role="contentinfo">
-    <a href="#" class="social-btn youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-    <a href="#" class="social-btn twitch" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
-    <a href="#" class="social-btn telegram" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
-    <a href="https://www.instagram.com/darkzone.esport?igsh=dG5naXMxMnFtZWd0" class="social-btn instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-  </footer>
-
-
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 <script src="script.js"></script>
 
 </body>
