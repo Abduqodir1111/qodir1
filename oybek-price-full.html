@@ -72,6 +72,189 @@
     .zone-packs li {
       margin: 6px 0;
     }
+    .book-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffd700;
+  border: 2px solid #ffd700;
+  border-radius: 10px;
+  background-color: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.book-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #ffd700;
+  opacity: 0.2;
+  transition: all 0.4s ease;
+}
+
+.book-btn:hover::before {
+  left: 0;
+}
+
+.book-btn:hover {
+  background-color: #ffd700;
+  color: black;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ffd700;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background: #111;
+  color: white;
+  margin: 5% auto;
+  padding: 40px;
+  border: 2px solid #ffd700;
+  width: 800px;
+  height: 600px;
+  max-width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 0 25px #ffd700;
+  position: relative;
+}
+
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #ffd700;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.book-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ffd700;
+  color: black;
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ffd700;
+}
+.booking-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 15px;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.seat {
+  flex: 1 0 18%; /* 5 в ряд */
+  padding: 12px 0;
+  font-size: 1.2rem;
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #ffd700;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* При наведении */
+.seat:hover {
+  background-color: #ffd700;
+  color: black;
+}
+
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Расстояние между рядами */
+  padding: 20px;
+  align-items: center;
+}
+
+.seat-row {
+  display: flex;
+  flex-direction: row-reverse; /* кнопки справа налево */
+  gap: 10px;
+}
+
+.seat {
+  width: 50px;
+  height: 50px;
+  font-size: 16px;
+  background: transparent;
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  color: #ffd700;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.seat:hover {
+  background: #ffd700;
+  color: black;
+}
+
+
+.seat.booked {
+  background-color: #aa0000;
+  cursor: not-allowed;
+}
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.booking-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; /* отступ между группами */
+}
+
+.seat-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* отступ между рядами внутри группы */
+}
+
+.seat-row {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+  justify-content: center;
+}
+
+
+
   </style>
 </head>
 <body>
@@ -122,6 +305,10 @@
           <li>3 часа — 50 000 сум</li>
           <li>5 часов — 75 000 сум</li>
         </ul>
+      <a href="#" class="book-btn" onclick="openModal()">Забронировать</a>
+
+
+     
       </div>
 
       <div class="zone-card">
@@ -131,6 +318,7 @@
           <li>3 часа — 60 000 сум</li>
           <li>5 часов — 90 000 сум</li>
         </ul>
+        <a href="bron-asus.html" class="book-btn">Забронировать</a>
       </div>
 
       <div class="zone-card">
@@ -140,6 +328,7 @@
           <li>3 часа — 60 000 сум</li>
           <li>5 часов — 90 000 сум</li>
         </ul>
+        <a href="bron-alienware.html" class="book-btn">Забронировать</a>
       </div>
 
       <div class="zone-card">
@@ -149,9 +338,72 @@
           <li>3 часа — 60 000 сум</li>
           <li>5 часов — 90 000 сум</li>
         </ul>
+        <a href="bron-zowie.html" class="book-btn">Забронировать</a>
       </div>
     </div>
   </main>
+ 
+
+<!-- Модальное окно -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+<div class="booking-container">
+
+  <div class="seat-group">
+  <div class="seat-row">
+    <button class="seat">1</button>
+    <button class="seat">2</button>
+    <button class="seat">3</button>
+    <button class="seat">4</button>
+    <button class="seat">5</button>
+  </div>
+  <div class="seat-row">
+    <button class="seat">6</button>
+    <button class="seat">7</button>
+    <button class="seat">8</button>
+    <button class="seat">9</button>
+    <button class="seat">10</button>
+    </div>
+  </div>
+
+  <div class="seat-group">
+  <div class="seat-row">
+    <button class="seat">11</button>
+    <button class="seat">12</button>
+    <button class="seat">13</button>
+    <button class="seat">14</button>
+    <button class="seat">15</button>
+  </div>
+  <div class="seat-row">
+    <button class="seat">16</button>
+    <button class="seat">17</button>
+    <button class="seat">18</button>
+    <button class="seat">19</button>
+    <button class="seat">20</button>
+  </div>
+  </div>
+
+  <div class="seat-group">
+  <div class="seat-row">
+    <button class="seat">21</button>
+    <button class="seat">22</button>
+    <button class="seat">23</button>
+    <button class="seat">24</button>
+    <button class="seat">25</button>
+  </div>
+  <div class="seat-row">
+    <button class="seat">26</button>
+    <button class="seat">27</button>
+    <button class="seat">28</button>
+    <button class="seat">29</button>
+    <button class="seat">30</button>
+  </div>
+  </div>
+</div>
+
+</div>
+
 <footer class="social-footer" role="contentinfo">
     <a href="#" class="social-btn youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
     <a href="#" class="social-btn twitch" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
@@ -160,5 +412,22 @@
   </footer>
 <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 <script src="script.js"></script>
+<script>
+  function openModal() {
+    document.getElementById("modal").style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("modal");
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
 </body>
 </html>
