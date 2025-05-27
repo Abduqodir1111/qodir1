@@ -1,3 +1,4 @@
+/* ========== БАЗОВЫЕ СТИЛИ ========== */
 * {
   margin: 0;
   padding: 0;
@@ -8,23 +9,25 @@ html, body {
   height: 100%;
 }
 
+/* ========== ФОН ========== */
 .background {
   background-image: url('1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed; /* Вот эта строка делает фон "прилипшим" */
+  background-attachment: fixed;
   min-height: 100vh;
   width: 100%;
 }
 
+/* ========== TOP BAR ========== */
 .top-bar {
   height: 90px;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
-  justify-content: space-between; /* распределение по краям */
+  justify-content: space-between;
   padding: 2px 30px;
   position: fixed;
   top: 0;
@@ -32,12 +35,27 @@ html, body {
   z-index: 10;
 }
 
+/* ========== БУРГЕР ========== */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* ========== НАВИГАЦИЯ ========== */
 .nav-buttons {
   display: flex;
   gap: 30px;
   align-items: center;
 }
-
 
 .nav-buttons a {
   color: white;
@@ -52,12 +70,15 @@ html, body {
   background-color: rgba(255, 255, 255, 0.15);
   box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.4);
 }
+
+/* ========== ЛОГОТИП ========== */
 .logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   top: 10px;
 }
+
 .logo a {
   display: inline-block;
   padding: 2px;
@@ -71,14 +92,17 @@ html, body {
 
 .logo img {
   width: 100%;
-  height: 100%; /* чуть меньше 90px панели */
+  height: 100%;
   object-fit: cover;
   display: block;
 }
+
 .logo a:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
 }
+
+/* ========== КОНТАКТЫ ========== */
 .call-center {
   color: white;
   font-size: 16px;
@@ -96,18 +120,23 @@ html, body {
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
 }
 
-/* Номер как ссылка */
 .call-center a {
   color: white;
   text-decoration: none;
 }
-/* Контейнер выпадающего меню */
+
+.contact-block {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* ========== DROPDOWN ========== */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* Кнопка меню */
 .dropbtn {
   background-color: transparent;
   color: white;
@@ -120,13 +149,11 @@ html, body {
   font-family: inherit;
 }
 
-/* Эффекты при наведении на кнопку */
 .dropbtn:hover {
   background-color: rgba(255, 255, 255, 0.15);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
-/* Содержимое выпадающего меню */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -140,7 +167,6 @@ html, body {
   overflow: hidden;
 }
 
-/* Ссылки внутри выпадающего меню */
 .dropdown-content a {
   color: white;
   padding: 12px 16px;
@@ -151,19 +177,17 @@ html, body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Эффект при наведении на элементы меню */
 .dropdown-content a:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Показываем меню при наведении */
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/*Основной контент*/
+/* ========== ОСНОВНОЙ КОНТЕНТ ========== */
 .main-content {
-  padding-top: 100px; /* чтобы не перекрывало top-bar */
+  padding-top: 100px;
   color: white;
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
@@ -171,15 +195,14 @@ html, body {
 
 .section {
   padding: 60px 20px;
-  background-color: rgba(0, 0, 0, 0.6); /* стало темнее */
+  background-color: rgba(0, 0, 0, 0.6);
   margin: 20px auto;
   border-radius: 16px;
   max-width: 900px;
   box-shadow: 0 0 10px rgba(255,255,255,0.1);
 }
 
-
-
+/* ========== ФИЛИАЛЫ ========== */
 .branch-list {
   display: flex;
   flex-wrap: wrap;
@@ -193,25 +216,20 @@ html, body {
   padding: 20px 30px;
   border-radius: 12px;
   font-size: 18px;
-  border: 2px solid white; /* белая рамка */
+  border: 2px solid white;
   box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
   color: white;
-  cursor: pointer; /* курсор как у кнопки */
+  cursor: pointer;
 }
-
 
 .branch-card:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-  border-color: rgba(255, 255, 255, 0.8); /* светящаяся рамка */
-}
-.contact-block {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  border-color: rgba(255, 255, 255, 0.8);
 }
 
+/* ========== СОЦСЕТИ ========== */
 .social-icons a {
   color: white;
   font-size: 20px;
@@ -220,9 +238,11 @@ html, body {
 }
 
 .social-icons a:hover {
-  color: #1da1f2; /* можно менять под платформу */
+  color: #1da1f2;
   transform: scale(1.2);
 }
+
+/* ========== ГАЛЕРЕЯ ========== */
 .gallery {
   text-align: center;
   margin-top: 10px;
@@ -235,8 +255,8 @@ html, body {
 .slider {
   position: relative;
   width: 100%;
-  max-width: 900px; /* можно изменить под свой размер */
-  height: 500px;     /* фиксированная высота */
+  max-width: 900px;
+  height: 500px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 12px;
@@ -255,7 +275,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 🔥 ВАЖНО: изображение заполнит блок без искажений */
+  object-fit: cover;
   display: none;
   transition: opacity 0.5s ease-in-out;
 }
@@ -290,7 +310,8 @@ html, body {
 .next {
   right: 10px;
 }
-/* === Прелоадер === */
+
+/* ========== ПРЕЛОАДЕР ========== */
 #preloader {
   position: fixed;
   top: 0;
@@ -325,25 +346,22 @@ html, body {
   animation: slideUp 1.2s ease-out;
 }
 
-/* Анимации */
 @keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.07);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
 }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
-  to   { opacity: 1; transform: scale(1); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
+/* ========== PARALLAX ========== */
 .parallax-section {
   height: 500px;
   position: relative;
@@ -356,7 +374,7 @@ html, body {
 }
 
 .parallax-inner {
-  background-image: url('images/bg2.jpg'); /* Поставь свою картинку */
+  background-image: url('images/bg2.jpg');
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -375,7 +393,13 @@ html, body {
   font-family: 'Segoe UI', sans-serif;
   text-shadow: 0 0 10px black;
 }
+
+/* ========== АДАПТАЦИЯ ========== */
 @media (max-width: 768px) {
+  .background {
+    background-attachment: scroll;
+  }
+
   .top-bar {
     flex-direction: column;
     height: auto;
@@ -383,10 +407,8 @@ html, body {
     align-items: flex-start;
   }
 
-  .logo {
-    position: static;
-    transform: none;
-    margin: 10px auto;
+  .burger {
+    display: flex;
   }
 
   .nav-buttons {
@@ -394,11 +416,22 @@ html, body {
     gap: 10px;
     width: 100%;
     align-items: flex-start;
+    display: none;
+  }
+
+  .nav-buttons.active {
+    display: flex;
   }
 
   .dropbtn, .nav-buttons a {
     width: 100%;
     text-align: left;
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+    margin: 10px auto;
   }
 
   .contact-block {
@@ -415,10 +448,14 @@ html, body {
   }
 
   .slider {
-    height: 250px; /* меньше на мобильном */
+    height: 250px;
   }
 
   .preloader-text {
     font-size: 16px;
+  }
+
+  .main-content {
+    padding-top: 120px;
   }
 }
