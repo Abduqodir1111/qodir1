@@ -1,0 +1,56 @@
+/* oybek-style.css */
+.section-title {
+  font-size: 2.6rem;
+  text-align: center;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px #ff00cc;
+  color: #ffd700;
+}
+
+.price-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.zone-card {
+  flex: 1 1 220px;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+.zone-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px #ffd700;
+}
+
+.zone-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+.zone-price {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #00fff7;
+}
+
+.zone-packs {
+  font-size: 1.1rem;
+  color: #eee;
+  margin-top: 10px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.zone-packs li {
+  margin: 6px 0;
+}

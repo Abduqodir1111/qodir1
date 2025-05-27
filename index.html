@@ -2,114 +2,115 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dark Zone</title>
-  <link rel="icon" href="logo1.png" type="image/jpeg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Фоновое изображение</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <links
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 <body>
-
-<!-- ЗАСТАВКА -->
-<div id="intro-screen">
-  <div class="matrix-bg"></div>
-  <div class="intro-content">
-    <img src="logo1.png" alt="Dark Zone Logo" class="intro-logo">
-    <h1 class="intro-title">Добро пожаловать в <span class="highlight">DARK ZONE</span></h1>
+  <div class="background">
+    <main class="main-content">
+      <!-- Прелоадер с логотипом и текстом -->
+<div id="preloader">
+  <div class="preloader-content">
+    <img src="logo1.png" alt="Логотип" class="preloader-logo" />
+    <p class="preloader-text">Добро пожаловать в Dark Zone</p>
   </div>
 </div>
 
-<!-- ШАПКА -->
-<header class="top-bar" role="banner">
-  <div class="left-menu-group">
-    <button id="menuToggle" class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
-      <i class="fas fa-bars"></i>
-    </button>
 
-    <nav id="menu" class="menu" role="navigation" aria-label="Главное меню">
-      <a href="#about" class="menu-button">О нас</a>
-      <div class="menu-dropdown" tabindex="0">
-        <div class="menu-button" aria-haspopup="true" aria-expanded="false">Филиалы ▾</div>
-        <div class="dropdown-list" role="menu" aria-label="Филиалы">
-          <a href="oybek-price-full.html" role="menuitem" tabindex="-1">ОЙБЕК</a>
-          <a href="#" role="menuitem" tabindex="-1">ЧИЛОНЗОР</a>
-          <a href="#" role="menuitem" tabindex="-1">ЧИМГАН</a>
-          <a href="#" role="menuitem" tabindex="-1">ЮНУСАБАД</a>
-          <a href="#" role="menuitem" tabindex="-1">КАДЕШЕВА</a>
-          <a href="#" role="menuitem" tabindex="-1">ПАРКЕНТСКИЙ</a>
-          <a href="#" role="menuitem" tabindex="-1">ЛАБЗАК</a>
-          <a href="#" role="menuitem" tabindex="-1">КАРАСУ</a>
-        </div>
-      </div>
-      <a href="#prices" class="menu-button">Цены</a>
-      <a href="#promotions" class="menu-button">Акции</a>
-      <a href="#contacts" class="menu-button">Контакты</a>
-    </nav>
+  <section id="gallery" class="section gallery">
+  <h2>Галерея</h2>
+  <div class="slider">
+    <div class="slides">
+      <img src="images/darkphotos/1.jpg" alt="Фото клуба 1" />
+      <img src="images/darkphotos/2.jpg" alt="Фото клуба 2" />
+      <img src="images/darkphotos/3.jpg" alt="Фото клуба 3" />
+      <img src="images/darkphotos/4.jpg" alt="Фото клуба 4" />
+      <img src="images/darkphotos/5.jpg" alt="Фото клуба 5" />
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
   </div>
+</section>
 
-  <a href="index.html" class="logo-link" aria-label="Главная страница">
-    <img src="logo.jpg" alt="Логотип клуба" class="logo-img" />
-  </a>
 
-  <div class="right-info" aria-label="Номер колл-центра">Кол-центр: +998 33 125 33 33</div>
-  <button id="themeToggle" aria-label="Переключить тему" class="theme-toggle-btn">🌙</button>
-</header>
 
-<!-- ОСНОВНОЙ КОНТЕНТ -->
-<main class="main-content" id="main-content" role="main">
-  <section class="hero-description reveal">
-    <h1>Добро пожаловать в Dark Zone</h1>
-    <p>Погрузись в мир киберспорта с мощными ПК, атмосферой и турнирами! Идеальное место для геймеров и стримеров.</p>
-  </section>
-
-  <section id="services" class="reveal">
-    <h2>Наши услуги</h2>
-    <div class="services-grid">
-      <div class="service"><i class="fas fa-gamepad"></i><p>Современные ПК</p></div>
-      <div class="service"><i class="fas fa-trophy"></i><p>Киберспортивные турниры</p></div>
-      <div class="service"><i class="fas fa-headset"></i><p>Зоны для стриминга</p></div>
+  <section id="branches" class="section branches">
+    <h2>Наши филиалы</h2>
+    <div class="branch-list">
+      <div class="branch-card">Чилонзор</div>
+      <div class="branch-card">Чимган</div>
+      <div class="branch-card">Ойбек</div>
+      <div class="branch-card">Паркентский</div>
+      <div class="branch-card">Юнусобод</div>
+      <div class="branch-card">Лабзак</div>
+      <div class="branch-card">Карасу</div>
+      <div class="branch-card">Кадешева</div>
     </div>
   </section>
+  <section class="parallax-section">
+  <div class="parallax-inner">
+    <h1>Ощути атмосферу</h1>
+  </div>
+</section>
 
-  <section id="testimonials" class="reveal">
-    <h2>Отзывы наших гостей</h2>
-    <blockquote>🔥 «Отличное место, супер ПК и атмосфера!» – Артём</blockquote>
-    <blockquote>💻 «Играю здесь каждую неделю!» – Маша</blockquote>
-  </section>
 
-  <section id="contact-form" class="reveal">
-    <h2>Связаться с нами</h2>
-    <form>
-      <input type="text" placeholder="Ваше имя" required>
-      <input type="email" placeholder="Email" required>
-      <textarea placeholder="Ваше сообщение..." required></textarea>
-      <button type="submit">Отправить</button>
-    </form>
-  </section>
-
-  <section id="map-section" class="reveal">
-    <h2>Наши филиалы</h2>
-    <div id="map" style="height: 400px; border-radius: 10px; overflow: hidden;"></div>
-  </section>
 </main>
 
-<!-- ФУТЕР -->
-<footer class="social-footer" role="contentinfo">
-  <a href="#" class="social-btn youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-  <a href="#" class="social-btn twitch" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
-  <a href="#" class="social-btn telegram" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
-  <a href="https://www.instagram.com/darkzone.esport?igsh=dG5naXMxMnFtZWd0" class="social-btn instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-</footer>
+    <header class="top-bar">
+      <nav class="nav-buttons">
+        <a href="#about">О нас</a>
+        <div class="dropdown">
+          <button class="dropbtn">Наши филиалы</button>
+          <div class="dropdown-content">
+          <a href="kadesheva.html">Кадешева</a>
+          <a href="karasu.html">Карасу</a>
+          <a href="labzak.html">Лабзак</a>
+          <a href="oybek.html">Ойбек</a>
+          <a href="parkentskiy.html">Паркентский</a>
+          <a href="chilonzor.html">Чилонзор</a>
+          <a href="chimgan.html">Чимган</a>
+          <a href="yunusobod.html">Юнусобод</a>
+          </div>
+        </div>
+        <a href="#offers">Акции</a>
 
-<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-<script src="script.js"></script>
+      </nav>
+      <div class="logo">
+        <a href="index.html">
+        <img src="logo1.png" alt="Логотип" />
+        </a>
+      </div>
+<div class="contact-block">
+  <div class="social-icons">
+    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://t.me" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+  </div>
+  <div class="call-center">📞 Call-center: +998 33 125 33 33</div>
+</div>
+
+    </header>
+  </div>
+
+  <script src="slider.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const preloader = document.getElementById("preloader");
+
+    // Убираем прелоадер спустя 2 секунды после загрузки DOM
+    setTimeout(() => {
+      preloader.style.opacity = "0";
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 500); // Время для плавного скрытия
+    }, 2000); // Ждём 2 секунды
+  });
+</script>
+
 
 </body>
 </html>
