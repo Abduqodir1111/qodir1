@@ -122,6 +122,23 @@
     burger.classList.toggle('open');
   });
 </script>
+<script>
+  let lastScrollY = window.scrollY;
+  const topBar = document.querySelector('.top-bar');
+
+  window.addEventListener('scroll', () => {
+    if (window.innerWidth <= 768) { // Только для мобильных
+      if (window.scrollY > lastScrollY) {
+        // Скролл вниз
+        topBar.classList.add('sticky');
+      } else {
+        // Скролл вверх
+        topBar.classList.remove('sticky');
+      }
+      lastScrollY = window.scrollY;
+    }
+  });
+</script>
 
 
 
