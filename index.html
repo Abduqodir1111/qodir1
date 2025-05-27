@@ -60,24 +60,31 @@
 </main>
 
     <header class="top-bar">
-      <nav class="nav-buttons">
-        <a href="#about">О нас</a>
-        <div class="dropdown">
-          <button class="dropbtn">Наши филиалы</button>
-          <div class="dropdown-content">
-          <a href="kadesheva.html">Кадешева</a>
-          <a href="karasu.html">Карасу</a>
-          <a href="labzak.html">Лабзак</a>
-          <a href="oybek.html">Ойбек</a>
-          <a href="parkentskiy.html">Паркентский</a>
-          <a href="chilonzor.html">Чилонзор</a>
-          <a href="chimgan.html">Чимган</a>
-          <a href="yunusobod.html">Юнусобод</a>
-          </div>
-        </div>
-        <a href="#offers">Акции</a>
+      <!-- Кнопка бургера -->
+<div class="burger" id="burger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 
-      </nav>
+<nav class="nav-buttons" id="navMenu">
+  <a href="#about">О нас</a>
+  <div class="dropdown">
+    <button class="dropbtn">Наши филиалы</button>
+    <div class="dropdown-content">
+      <a href="kadesheva.html">Кадешева</a>
+      <a href="karasu.html">Карасу</a>
+      <a href="labzak.html">Лабзак</a>
+      <a href="oybek.html">Ойбек</a>
+      <a href="parkentskiy.html">Паркентский</a>
+      <a href="chilonzor.html">Чилонзор</a>
+      <a href="chimgan.html">Чимган</a>
+      <a href="yunusobod.html">Юнусобод</a>
+    </div>
+  </div>
+  <a href="#offers">Акции</a>
+</nav>
+
       <div class="logo">
         <a href="index.html">
         <img src="logo1.png" alt="Логотип" />
@@ -110,6 +117,16 @@
     }, 2000); // Ждём 2 секунды
   });
 </script>
+<script>
+  const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('navMenu');
+
+  burger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    burger.classList.toggle('open');
+  });
+</script>
+
 
 
 </body>
