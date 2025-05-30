@@ -5,116 +5,207 @@
   <title>Тёмный Header с кнопками</title>
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=1280">
-
 </head>
 <body>
-<div class="wrapper">
-<header>
-  <div class="button-group">
-    <button>Пример 1</button>
-    <button>Пример 2</button>
-    <button>Пример 3</button>
+  <div class="wrapper">
+    <header>
+      <div class="button-group">
+        <button>Пример 1</button>
+        <button>Пример 2</button>
+        <button>Пример 3</button>
+      </div>
+      
+      <div class="logo-container">
+        <img src="logo1.png" alt="Logo" />
+      </div>
+
+      <div class="header-contact">
+        <div class="phone-box">
+          <span class="phone-icon">📞</span>
+          <span class="phone-number">+998 33 125 33 33</span>
+        </div>
+        
+        <div class="social-buttons">
+          <a href="https://twitch.tv" class="social-btn" target="_blank">
+            <img src="twitch.svg" alt="Twitch" />
+          </a>
+          <a href="https://youtube.com" class="social-btn" target="_blank">
+            <img src="youtube.svg" alt="YouTube" />
+          </a>
+          <a href="https://t.me" class="social-btn" target="_blank">
+            <img src="telegram.svg" alt="Telegram" />
+          </a>
+          <a href="https://instagram.com" class="social-btn" target="_blank">
+            <img src="instagram.svg" alt="Instagram" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="hero">
+        <h1>Добро пожаловать в DARK ZONE</h1>
+        <p>Погрузись в мир киберспорта и современных технологий</p>
+        <a href="#" id="openModalBtn" class="main-btn">Забронировать место</a>
+      </div>
+
+      <div class="club-description">
+        <h2>Почему выбирают нас?</h2>
+        <p>Современные компьютеры, уютная атмосфера, круглосуточная работа и лучшие турниры в городе.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <img src="pc.svg" alt="PC" />
+          <p>RTX 4090 + i9</p>
+        </div>
+        <div class="feature">
+          <img src="headset.svg" alt="Headset" />
+          <p>Премиум гарнитура</p>
+        </div>
+        <div class="feature">
+          <img src="wifi.svg" alt="WiFi" />
+          <p>Стабильный интернет</p>
+        </div>
+        <div class="feature">
+          <img src="cafe.svg" alt="Cafe" />
+          <p>Зона отдыха и кафе</p>
+        </div>
+      </div>
+
+      <!-- Филиалы -->
+      <div class="branches">
+        <h2>Наши филиалы</h2>
+        <div class="branch-buttons">
+          <button>Чиланзар</button>
+          <button>Чимган</button>
+          <button>Юнусабад</button>
+          <button>Кадешева</button>
+          <button>Паркентский</button>
+          <button>Карасу 6</button>
+          <button>Ойбек</button>
+          <button>Лабзак</button>
+        </div>
+      </div>
+
+      <!-- Карта -->
+      <div class="map-container">
+        <h2>Карта Ташкента</h2>
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?ll=69.2401%2C41.3112&z=11&text=Ташкент"
+          width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-logo">
+          <img src="logo1.png" alt="DARK ZONE Logo" />
+          <p>DARK ZONE ESPORTS</p>
+        </div>
+
+        <div class="footer-links">
+          <h3>Навигация</h3>
+          <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Филиалы</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h3>Контакты</h3>
+          <p>Колл-центр: +998 33 125 33 33</p>
+          <p>Email: info@darkzone.uz</p>
+        </div>
+
+        <div class="footer-social">
+          <h3>Мы в соцсетях</h3>
+          <div class="footer-icons">
+            <a href="#"><img src="twitch.svg" alt="Twitch"></a>
+            <a href="#"><img src="youtube.svg" alt="YouTube"></a>
+            <a href="#"><img src="telegram.svg" alt="Telegram"></a>
+            <a href="#"><img src="instagram.svg" alt="Instagram"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 DARK ZONE ESPORTS. Все права защищены.</p>
+      </div>
+    </footer>
   </div>
-  
-  <div class="logo-container">
-    <img src="logo1.png" alt="Logo" />
-  </div>
 
-  <div class="header-contact">
-  <div class="phone-box">
-    <span class="phone-icon">📞</span>
-    <span class="phone-number">+998 33 125 33 33</span>
-  </div>
-  
-<div class="social-buttons">
-  <a href="https://twitch.tv" class="social-btn" target="_blank">
-    <img src="twitch.svg" alt="Twitch" />
-  </a>
-  <a href="https://youtube.com" class="social-btn" target="_blank">
-    <img src="youtube.svg" alt="YouTube" />
-  </a>
-  <a href="https://t.me" class="social-btn" target="_blank">
-    <img src="telegram.svg" alt="Telegram" />
-  </a>
-  <a href="https://instagram.com" class="social-btn" target="_blank">
-    <img src="instagram.svg" alt="Instagram" />
-  </a>
-</div>
-
-
-</header>
-
-<main class="main-content">
-  <div class="hero">
-    <h1>Добро пожаловать в DARK ZONE</h1>
-    <p>Погрузись в мир киберспорта и современных технологий</p>
-    <a href="#book" class="main-btn">Забронировать место</a>
-  </div>
-
-  <div class="club-description">
-    <h2>Почему выбирают нас?</h2>
-    <p>Современные компьютеры, уютная атмосфера, круглосуточная работа и лучшие турниры в городе.</p>
-  </div>
-
-  <div class="features">
-    <div class="feature">
-      <img src="pc.svg" alt="PC" />
-      <p>RTX 4090 + i9</p>
-    </div>
-    <div class="feature">
-      <img src="headset.svg" alt="Headset" />
-      <p>Премиум гарнитура</p>
-    </div>
-    <div class="feature">
-      <img src="wifi.svg" alt="WiFi" />
-      <p>Стабильный интернет</p>
-    </div>
-    <div class="feature">
-      <img src="cafe.svg" alt="Cafe" />
-      <p>Зона отдыха и кафе</p>
-    </div>
-  </div>
-</main>
-
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-logo">
-      <img src="logo1.png" alt="DARK ZONE Logo" />
-      <p>DARK ZONE ESPORTS</p>
-    </div>
-
-    <div class="footer-links">
-      <h3>Навигация</h3>
-      <ul>
-        <li><a href="#">Главная</a></li>
-        <li><a href="#">О нас</a></li>
-        <li><a href="#">Филиалы</a></li>
-        <li><a href="#">Контакты</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-contact">
-      <h3>Контакты</h3>
-      <p>Колл-центр: +998 33 125 33 33</p>
-      <p>Email: info@darkzone.uz</p>
-    </div>
-
-    <div class="footer-social">
-      <h3>Мы в соцсетях</h3>
-      <div class="footer-icons">
-        <a href="#"><img src="twitch.svg" alt="Twitch"></a>
-        <a href="#"><img src="youtube.svg" alt="YouTube"></a>
-        <a href="#"><img src="telegram.svg" alt="Telegram"></a>
-        <a href="#"><img src="instagram.svg" alt="Instagram"></a>
+    <!-- Модальное окно -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModalBtn">&times;</span>
+      <h2>Выберите филиал для связи</h2>
+      <div class="branch-modal-list">
+        <div class="branch-item">
+          <p>Чиланзар</p>
+          <a href="tel:+998771293339" class="contact-link">📞 +998 77 129 33 39</a>
+          <a href="https://t.me/darkzone_chilonzor" target="_blank" class="contact-link">
+            <img src="telegram.svg" alt="Telegram" /> Telegram
+          </a>
+        </div>
+        <div class="branch-item">
+          <p>Чимган</p>
+          <a href="tel:+998331253333" class="contact-link">📞 +998 33 125 33 33</a>
+          <a href="https://t.me/DarkZoneN1" target="_blank" class="contact-link">
+            <img src="telegram.svg" alt="Telegram" /> Telegram
+          </a>
+        </div>
+        <div class="branch-item">
+          <p>Юнусабад</p>
+          <a href="tel:+998331234569" class="contact-link">📞 +998 33 123 45 69</a>
+          <a href="https://t.me/DarkZone_vip777" target="_blank" class="contact-link">
+            <img src="telegram.svg" alt="Telegram" /> Telegram
+          </a>
+        </div>
+        <div class="branch-item">
+          <p>Кадешева</p>
+          <a href="tel:+998331234569" class="contact-link">📞 +998 33 123 45 69</a>
+          <a href="https://t.me/dark_kadishva" target="_blank" class="contact-link">
+            <img src="telegram.svg" alt="Telegram" /> Telegram
+          </a>
+        </div>
+        <div class="branch-item">
+          <p>Паркентский</p>
+          <a href="tel:+998331234569" class="contact-link">📞 +998 33 123 45 69</a>
+          <a href="https://t.me/darkzone_VIP" target="_blank" class="contact-link">
+            <img src="telegram.svg" alt="Telegram" /> Telegram
+          </a>
+        </div>
+        <div class="branch-item">
+          <p>Ойбек</p>
+          <a href="tel:+998331234569" class="contact-link">📞 +998 55 511 33 03</a>
+          <a href="https://t.me/darkzone_oybek" target="_blank" class="contact-link">
+            <img src="telegram.svg" alt="Telegram" /> Telegram
+          </a>
+        </div>
+        <div class="branch-item">
+          <p>Лабзак</p>
+          <a href="tel:+998331234569" class="contact-link">📞 +998 33 123 45 69</a>
+          <a href="https://t.me/darkzone_VIP1" target="_blank" class="contact-link">
+            <img src="telegram.svg" alt="Telegram" /> Telegram
+          </a>
+        </div>
+        <div class="branch-item">
+          <p>Корасу 6</p>
+          <a href="tel:+998331234569" class="contact-link">📞 +998 33 123 45 69</a>
+          <a href="https://t.me/darkzoneqorasuv6" target="_blank" class="contact-link">
+            <img src="telegram.svg" alt="Telegram" /> Telegram
+          </a>
+        </div>
+        <!-- Добавь остальные филиалы по шаблону -->
       </div>
     </div>
   </div>
 
-  <div class="footer-bottom">
-    <p>© 2025 DARK ZONE ESPORTS. Все права защищены.</p>
-  </div>
-</footer>
 
-
+  <script src="script.js"></script>
 </body>
 </html>
