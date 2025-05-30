@@ -1,141 +1,120 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Фоновое изображение</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>Тёмный Header с кнопками</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=1280">
+
 </head>
 <body>
-  <div class="background">
-    <main class="main-content">
-      <!-- Прелоадер с логотипом и текстом -->
-      <div id="preloader" data-aos="zoom-in">
-        <div class="preloader-content">
-          <img src="logo1.png" alt="Логотип" class="preloader-logo" />
-          <p class="preloader-text">Добро пожаловать в Dark Zone</p>
-        </div>
-      </div>
-
-      <section id="gallery" class="section gallery" data-aos="fade-up">
-        <h2 data-aos="zoom-in">Галерея</h2>
-        <div class="slider" data-aos="fade-up">
-          <div class="slides">
-            <img src="images/darkphotos/1.jpg" alt="Фото клуба 1" />
-            <img src="images/darkphotos/2.jpg" alt="Фото клуба 2" />
-            <img src="images/darkphotos/3.jpg" alt="Фото клуба 3" />
-            <img src="images/darkphotos/4.jpg" alt="Фото клуба 4" />
-            <img src="images/darkphotos/5.jpg" alt="Фото клуба 5" />
-          </div>
-          <button class="prev">&#10094;</button>
-          <button class="next">&#10095;</button>
-        </div>
-      </section>
-
-      <section id="branches" class="section branches" data-aos="fade-up">
-        <h2 data-aos="zoom-in">Наши филиалы</h2>
-        <div class="branch-list">
-          <a href="chilonzor.html" class="branch-card" data-aos="fade-up" data-aos-delay="100">Чилонзор</a>
-          <a href="chimgan.html" class="branch-card" data-aos="fade-up" data-aos-delay="200">Чимган</a>
-          <a href="oybek.html" class="branch-card" data-aos="fade-up" data-aos-delay="300">Ойбек</a>
-          <a href="parkentskiy.html" class="branch-card" data-aos="fade-up" data-aos-delay="400">Паркентский</a>
-          <a href="yunusobod.html" class="branch-card" data-aos="fade-up" data-aos-delay="500">Юнусобод</a>
-          <a href="labzak.html" class="branch-card" data-aos="fade-up" data-aos-delay="600">Лабзак</a>
-          <a href="karasu.html" class="branch-card" data-aos="fade-up" data-aos-delay="700">Карасу</a>
-          <a href="kadesheva.html" class="branch-card" data-aos="fade-up" data-aos-delay="800">Кадешева</a>
-        </div>
-      </section>
-    </main>
-
-    <header class="top-bar">
-      <div class="burger" id="burger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <nav class="nav-buttons" id="navMenu">
-        <a href="#about">О нас</a>
-        <div class="dropdown">
-          <button class="dropbtn">Наши филиалы</button>
-          <div class="dropdown-content">
-            <a href="kadesheva.html">Кадешева</a>
-            <a href="karasu.html">Карасу</a>
-            <a href="labzak.html">Лабзак</a>
-            <a href="oybek.html">Ойбек</a>
-            <a href="parkentskiy.html">Паркентский</a>
-            <a href="chilonzor.html">Чилонзор</a>
-            <a href="chimgan.html">Чимган</a>
-            <a href="yunusobod.html">Юнусобод</a>
-          </div>
-        </div>
-        <a href="#offers">Акции</a>
-      </nav>
-
-      <div class="logo">
-        <a href="index.html">
-          <img src="logo1.png" alt="Логотип" />
-        </a>
-      </div>
-
-      <div class="contact-block" data-aos="fade-left">
-        <div class="social-icons">
-          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
-          <a href="https://t.me" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-          <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="call-center">📞 Call-center: +998 33 125 33 33</div>
-      </div>
-    </header>
+<div class="wrapper">
+<header>
+  <div class="button-group">
+    <button>Пример 1</button>
+    <button>Пример 2</button>
+    <button>Пример 3</button>
+  </div>
+  
+  <div class="logo-container">
+    <img src="logo1.png" alt="Logo" />
   </div>
 
-  <script src="slider.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  </script>
+  <div class="header-contact">
+  <div class="phone-box">
+    <span class="phone-icon">📞</span>
+    <span class="phone-number">+998 33 125 33 33</span>
+  </div>
+  
+<div class="social-buttons">
+  <a href="https://twitch.tv" class="social-btn" target="_blank">
+    <img src="twitch.svg" alt="Twitch" />
+  </a>
+  <a href="https://youtube.com" class="social-btn" target="_blank">
+    <img src="youtube.svg" alt="YouTube" />
+  </a>
+  <a href="https://t.me" class="social-btn" target="_blank">
+    <img src="telegram.svg" alt="Telegram" />
+  </a>
+  <a href="https://instagram.com" class="social-btn" target="_blank">
+    <img src="instagram.svg" alt="Instagram" />
+  </a>
+</div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const preloader = document.getElementById("preloader");
-      setTimeout(() => {
-        preloader.style.opacity = "0";
-        setTimeout(() => {
-          preloader.style.display = "none";
-        }, 500);
-      }, 2000);
-    });
-  </script>
 
-  <script>
-    const burger = document.getElementById('burger');
-    const navMenu = document.getElementById('navMenu');
-    burger.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      burger.classList.toggle('open');
-    });
-  </script>
+</header>
 
-  <script>
-    let lastScrollY = window.scrollY;
-    const topBar = document.querySelector('.top-bar');
+<main class="main-content">
+  <div class="hero">
+    <h1>Добро пожаловать в DARK ZONE</h1>
+    <p>Погрузись в мир киберспорта и современных технологий</p>
+    <a href="#book" class="main-btn">Забронировать место</a>
+  </div>
 
-    window.addEventListener('scroll', () => {
-      if (window.innerWidth <= 768) {
-        if (window.scrollY > lastScrollY) {
-          topBar.classList.add('sticky');
-        } else {
-          topBar.classList.remove('sticky');
-        }
-        lastScrollY = window.scrollY;
-      }
-    });
-  </script>
+  <div class="club-description">
+    <h2>Почему выбирают нас?</h2>
+    <p>Современные компьютеры, уютная атмосфера, круглосуточная работа и лучшие турниры в городе.</p>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <img src="pc.svg" alt="PC" />
+      <p>RTX 4090 + i9</p>
+    </div>
+    <div class="feature">
+      <img src="headset.svg" alt="Headset" />
+      <p>Премиум гарнитура</p>
+    </div>
+    <div class="feature">
+      <img src="wifi.svg" alt="WiFi" />
+      <p>Стабильный интернет</p>
+    </div>
+    <div class="feature">
+      <img src="cafe.svg" alt="Cafe" />
+      <p>Зона отдыха и кафе</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="logo1.png" alt="DARK ZONE Logo" />
+      <p>DARK ZONE ESPORTS</p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Навигация</h3>
+      <ul>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">О нас</a></li>
+        <li><a href="#">Филиалы</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Контакты</h3>
+      <p>Колл-центр: +998 33 125 33 33</p>
+      <p>Email: info@darkzone.uz</p>
+    </div>
+
+    <div class="footer-social">
+      <h3>Мы в соцсетях</h3>
+      <div class="footer-icons">
+        <a href="#"><img src="twitch.svg" alt="Twitch"></a>
+        <a href="#"><img src="youtube.svg" alt="YouTube"></a>
+        <a href="#"><img src="telegram.svg" alt="Telegram"></a>
+        <a href="#"><img src="instagram.svg" alt="Instagram"></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 DARK ZONE ESPORTS. Все права защищены.</p>
+  </div>
+</footer>
+
+
 </body>
 </html>
