@@ -585,3 +585,62 @@ footer {
     padding: 15px 20px;
   }
 }
+
+.modal {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  display: flex; /* важно */
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#preloader {
+  position: fixed;
+  background: black;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: hidePreloader 1s ease forwards;
+  animation-delay: 2.5s;
+}
+
+.loader-logo {
+  width: 120px;
+  opacity: 0;
+  transform: scale(0.5);
+  animation: zoomIn 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hidePreloader {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Исходное состояние блока — скрыт и сдвинут вниз */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Когда блок становится видимым — появляется плавно и поднимается */
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
