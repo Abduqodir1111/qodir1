@@ -6,9 +6,15 @@
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=1280">
 </head>
+<!-- Вставь перед <body> -->
+<div id="preloader">
+  <img src="logo1.png" alt="DARK ZONE" class="loader-logo" />
+</div>
+
 <body>
+  
   <div class="wrapper">
-    <header>
+    <header class="scroll-reveal">
       <div class="button-group">
         <button>Пример 1</button>
         <button>Пример 2</button>
@@ -43,18 +49,18 @@
     </header>
 
     <main class="main-content">
-      <div class="hero">
+      <div class="hero scroll-reveal">
         <h1>Добро пожаловать в DARK ZONE</h1>
         <p>Погрузись в мир киберспорта и современных технологий</p>
         <a href="#" id="openModalBtn" class="main-btn">Забронировать место</a>
       </div>
 
-      <div class="club-description">
+      <div class="club-description scroll-reveal">
         <h2>Почему выбирают нас?</h2>
         <p>Современные компьютеры, уютная атмосфера, круглосуточная работа и лучшие турниры в городе.</p>
       </div>
 
-      <div class="features">
+      <div class="features scroll-reveal">
         <div class="feature">
           <img src="pc.svg" alt="PC" />
           <p>RTX 4090 + i9</p>
@@ -74,7 +80,7 @@
       </div>
 
       <!-- Филиалы -->
-      <div class="branches">
+      <div class="branches scroll-reveal">
         <h2>Наши филиалы</h2>
         <div class="branch-buttons">
           <button>Чиланзар</button>
@@ -89,7 +95,7 @@
       </div>
 
       <!-- Карта -->
-      <div class="map-container">
+      <div class="map-container scroll-reveal">
         <h2>Карта Ташкента</h2>
         <iframe
           src="https://yandex.ru/map-widget/v1/?ll=69.2401%2C41.3112&z=11&text=Ташкент"
@@ -98,7 +104,7 @@
       </div>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer scroll-reveal">
       <div class="footer-container">
         <div class="footer-logo">
           <img src="logo1.png" alt="DARK ZONE Logo" />
@@ -140,7 +146,7 @@
 
     <!-- Модальное окно -->
   <div id="bookingModal" class="modal">
-    <div class="modal-content">
+    <div class="modal-content scroll-reveal">
       <span class="close-btn" id="closeModalBtn">&times;</span>
       <h2>Выберите филиал для связи</h2>
       <div class="branch-modal-list">
@@ -204,7 +210,6 @@
       </div>
     </div>
   </div>
-
 
   <script src="script.js"></script>
 </body>
